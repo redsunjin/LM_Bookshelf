@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LM Bookshelf Manager</title>
+    <link rel="stylesheet" href="manager.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <p class="eyebrow" data-i18n="managerEyebrow">NotebookLM Archive</p>
+          <h1 data-i18n="appName">LM Bookshelf</h1>
+        </div>
+
+        <div class="stat-card">
+          <span data-i18n="totalItems">Total Items</span>
+          <strong id="totalCount">0</strong>
+        </div>
+
+        <div class="stat-card">
+          <span data-i18n="totalFolders">Folders</span>
+          <strong id="folderCount">0</strong>
+        </div>
+
+        <div class="sidebar-section">
+          <label for="folderFilter" data-i18n="filterFolder">Folder Filter</label>
+          <select id="folderFilter"></select>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="section-title-row">
+            <span data-i18n="allTags">All Tags</span>
+            <button id="clearTagFilterBtn" class="tiny-btn" data-i18n="clear">Clear</button>
+          </div>
+          <div id="tagFilterCloud" class="tag-cloud"></div>
+        </div>
+
+        <div class="sidebar-section">
+          <label class="toggle-row">
+            <input id="smartTaggingToggle" type="checkbox">
+            <span data-i18n="enableSmartTagging">Enable Smart Tagging</span>
+          </label>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="toolbar">
+          <div class="toolbar-main">
+            <input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Search">
+            <button id="addItemBtn" class="primary-btn" data-i18n="addItem">Add Item</button>
+          </div>
+          <div class="toolbar-actions">
+            <button id="exportBtn" class="secondary-btn" data-i18n="exportJson">Export JSON</button>
+            <label class="secondary-btn file-label">
+              <span data-i18n="importJson">Import JSON</span>
+              <input id="importInput" type="file" accept="application/json">
+            </label>
+          </div>
+        </header>
+
+        <section class="collection-panel">
+          <div class="panel-head">
+            <div>
+              <h2 data-i18n="libraryItems">Library Items</h2>
+              <p id="resultMeta" class="result-meta"></p>
+            </div>
+          </div>
+          <div id="itemsGrid" class="items-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="editorDialog" class="editor-dialog">
+      <form method="dialog" class="editor-form">
+        <div class="editor-header">
+          <h2 id="dialogTitle" data-i18n="addItem">Add Item</h2>
+          <button id="closeDialogBtn" class="icon-btn" type="button" aria-label="close">×</button>
+        </div>
+
+        <div class="field-grid">
+          <div class="field span-2">
+            <label for="editTitle" data-i18n="fieldTitle">Title</label>
+            <input id="editTitle" type="text" required>
+          </div>
+          <div class="field span-2">
+            <label for="editUrl" data-i18n="fieldUrl">URL</label>
+            <input id="editUrl" type="url" required>
+          </div>
+          <div class="field">
+            <label for="editFolder" data-i18n="fieldFolder">Folder</label>
+            <input id="editFolder" type="text" list="dialogFolderSuggestions">
+            <datalist id="dialogFolderSuggestions"></datalist>
+          </div>
+          <div class="field">
+            <label for="editTags" data-i18n="fieldTags">Tags</label>
+            <input id="editTags" type="text">
+          </div>
+          <div class="field span-2">
+            <label for="editNotes" data-i18n="fieldNotes">Notes</label>
+            <textarea id="editNotes" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="suggestions-strip">
+          <span data-i18n="smartSuggestions">Smart Suggestions</span>
+          <div id="dialogSmartTags" class="tag-cloud"></div>
+        </div>
+
+        <div class="dialog-actions">
+          <button id="deleteBtn" class="ghost-btn" type="button" data-i18n="delete">Delete</button>
+          <button class="secondary-btn" type="button" id="cancelBtn" data-i18n="cancel">Cancel</button>
+          <button class="primary-btn" type="submit" id="saveBtn" data-i18n="save">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="manager.js"></script>
+  </body>
+</html>

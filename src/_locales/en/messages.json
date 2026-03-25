@@ -1,0 +1,154 @@
+{
+  "appName": {
+    "message": "LM Bookshelf"
+  },
+  "appDesc": {
+    "message": "A local-first extension for saving and organizing NotebookLM links with folders, tags, and notes"
+  },
+  "popupEyebrow": {
+    "message": "NotebookLM Organizer"
+  },
+  "quickSaveTitle": {
+    "message": "Quick Save"
+  },
+  "fieldTitle": {
+    "message": "Title"
+  },
+  "fieldUrl": {
+    "message": "URL"
+  },
+  "fieldFolder": {
+    "message": "Folder"
+  },
+  "fieldTags": {
+    "message": "Tags"
+  },
+  "fieldNotes": {
+    "message": "Notes"
+  },
+  "saveCurrentTab": {
+    "message": "Save"
+  },
+  "resetForm": {
+    "message": "Reset"
+  },
+  "recentItems": {
+    "message": "Recent Items"
+  },
+  "searchPlaceholder": {
+    "message": "Search title, tags, notes"
+  },
+  "openManager": {
+    "message": "Manager"
+  },
+  "smartSuggestions": {
+    "message": "Smart Suggestions"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "noSuggestions": {
+    "message": "No suggested tags"
+  },
+  "tabUnavailable": {
+    "message": "No tab"
+  },
+  "detectedNotebookLm": {
+    "message": "NotebookLM detected"
+  },
+  "manualMode": {
+    "message": "Manual mode"
+  },
+  "emptyLibrary": {
+    "message": "No saved items yet."
+  },
+  "untitledItem": {
+    "message": "Untitled"
+  },
+  "uncategorizedFolder": {
+    "message": "Uncategorized"
+  },
+  "noTagsLabel": {
+    "message": "No tags"
+  },
+  "open": {
+    "message": "Open"
+  },
+  "reuse": {
+    "message": "Reuse"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "fillTitleAndUrl": {
+    "message": "Enter both a title and URL."
+  },
+  "itemSaved": {
+    "message": "Item saved."
+  },
+  "itemDeleted": {
+    "message": "Item deleted."
+  },
+  "managerEyebrow": {
+    "message": "NotebookLM Archive"
+  },
+  "totalItems": {
+    "message": "Total Items"
+  },
+  "totalFolders": {
+    "message": "Folders"
+  },
+  "filterFolder": {
+    "message": "Folder Filter"
+  },
+  "allTags": {
+    "message": "All Tags"
+  },
+  "clear": {
+    "message": "Clear"
+  },
+  "enableSmartTagging": {
+    "message": "Enable Smart Tagging"
+  },
+  "addItem": {
+    "message": "Add Item"
+  },
+  "editItem": {
+    "message": "Edit Item"
+  },
+  "edit": {
+    "message": "Edit"
+  },
+  "exportJson": {
+    "message": "Export JSON"
+  },
+  "importJson": {
+    "message": "Import JSON"
+  },
+  "libraryItems": {
+    "message": "Library Items"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "allFolders": {
+    "message": "All Folders"
+  },
+  "resultSummary": {
+    "message": "$1 shown / $2 total",
+    "placeholders": {
+      "countVisible": {
+        "content": "$1"
+      },
+      "countAll": {
+        "content": "$2"
+      }
+    }
+  },
+  "noNotes": {
+    "message": "No notes"
+  }
+}

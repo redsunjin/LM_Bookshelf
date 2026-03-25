@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LM Bookshelf</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow" data-i18n="popupEyebrow">NotebookLM Organizer</p>
+          <h1 data-i18n="appName">LM Bookshelf</h1>
+        </div>
+        <button id="openManagerBtn" class="secondary-btn" data-i18n="openManager">Manager</button>
+      </header>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2 data-i18n="quickSaveTitle">Quick Save</h2>
+          <span id="tabStatus" class="status-chip">...</span>
+        </div>
+
+        <div class="field">
+          <label for="titleInput" data-i18n="fieldTitle">Title</label>
+          <input id="titleInput" type="text">
+        </div>
+
+        <div class="field">
+          <label for="urlInput" data-i18n="fieldUrl">URL</label>
+          <input id="urlInput" type="url">
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="folderInput" data-i18n="fieldFolder">Folder</label>
+            <input id="folderInput" type="text" list="folderSuggestions">
+            <datalist id="folderSuggestions"></datalist>
+          </div>
+          <div class="field">
+            <label for="tagsInput" data-i18n="fieldTags">Tags</label>
+            <input id="tagsInput" type="text" placeholder="research, sprint">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="notesInput" data-i18n="fieldNotes">Notes</label>
+          <textarea id="notesInput" rows="3"></textarea>
+        </div>
+
+        <div class="suggestions-wrap">
+          <div class="suggestions-header">
+            <span data-i18n="smartSuggestions">Smart Suggestions</span>
+            <button id="refreshTagsBtn" class="link-btn" data-i18n="refresh">Refresh</button>
+          </div>
+          <div id="smartTags" class="tag-cloud"></div>
+        </div>
+
+        <div class="actions">
+          <button id="saveBtn" class="primary-btn" data-i18n="saveCurrentTab">Save</button>
+          <button id="resetBtn" class="ghost-btn" data-i18n="resetForm">Reset</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2 data-i18n="recentItems">Recent Items</h2>
+          <input id="searchInput" class="search-input" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Search">
+        </div>
+        <div id="recentList" class="recent-list"></div>
+      </section>
+
+      <div id="toast" class="toast hidden"></div>
+    </div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
