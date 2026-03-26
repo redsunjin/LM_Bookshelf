@@ -25,6 +25,13 @@
   color: #7a5a33;
 }
 
+.lm-bookshelf-preview {
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #4f3d27;
+}
+
 .lm-bookshelf-actions {
   display: flex;
   gap: 8px;
