@@ -1,0 +1,8 @@
+{
+  "name": "lm-bookshelf",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "verify": "node scripts/verify_project.mjs"
+  }
+}
