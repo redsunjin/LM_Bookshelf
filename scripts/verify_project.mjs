@@ -13,6 +13,8 @@ const requiredFiles = [
   'package.json',
   'src/manifest.json',
   'src/background/background.js',
+  'src/content/content.js',
+  'src/content/content.css',
   'src/popup/popup.html',
   'src/popup/popup.js',
   'src/popup/popup.css',
@@ -53,6 +55,12 @@ if (manifest.manifest_version !== 3) {
   fail('manifest_version must be 3');
 } else {
   pass('manifest_version is 3');
+}
+
+if (!Array.isArray(manifest.content_scripts) || !manifest.content_scripts.length) {
+  fail('manifest missing content_scripts');
+} else {
+  pass('manifest includes content_scripts');
 }
 
 const requiredPermissions = ['storage', 'tabs', 'activeTab'];

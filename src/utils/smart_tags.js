@@ -11,6 +11,18 @@ const TAG_RULES = [
   { tag: 'analysis', keywords: ['analysis', 'insight', 'summary', 'report', 'comparison'] }
 ];
 
+const FOLDER_RULES = [
+  { folder: 'Research', keywords: ['research', 'paper', 'study', 'article', 'benchmark', 'analysis'] },
+  { folder: 'Meetings', keywords: ['meeting', 'agenda', 'minutes', 'sync', 'standup', 'review'] },
+  { folder: 'Courses', keywords: ['course', 'lecture', 'lesson', 'tutorial', 'class', 'syllabus'] },
+  { folder: 'Product', keywords: ['product', 'feature', 'roadmap', 'prd', 'spec', 'launch'] },
+  { folder: 'Engineering', keywords: ['api', 'architecture', 'bug', 'code', 'system', 'infra', 'design'] },
+  { folder: 'Content', keywords: ['blog', 'newsletter', 'script', 'post', 'video', 'youtube', 'podcast'] },
+  { folder: 'Sales', keywords: ['sales', 'lead', 'customer', 'pipeline', 'deal', 'proposal'] },
+  { folder: 'Legal', keywords: ['legal', 'policy', 'contract', 'compliance', 'privacy', 'terms'] },
+  { folder: 'Projects', keywords: ['project', 'sprint', 'task', 'plan', 'backlog', 'milestone'] }
+];
+
 export function normalizeTag(value) {
   return String(value || '')
     .trim()
@@ -46,6 +58,25 @@ export function suggestTags({ title = '', notes = '', url = '', folder = '', tag
   }
 
   return [...matches].filter((tag) => !existingTags.has(tag));
+}
+
+export function suggestFolder({ title = '', notes = '', url = '', folder = '', tags = [], smartTags = [] }) {
+  if (String(folder || '').trim()) {
+    return String(folder).trim();
+  }
+
+  const haystack = [title, notes, url, ...(tags || []), ...(smartTags || [])].join(' ').toLowerCase();
+  const match = FOLDER_RULES.find((rule) => rule.keywords.some((keyword) => haystack.includes(keyword)));
+  return match ? match.folder : 'Inbox';
+}
+
+export function classifyDraft(draft) {
+  const smartTags = suggestTags(draft);
+  const folder = suggestFolder({ ...draft, smartTags });
+  return {
+    smartTags,
+    folder
+  };
 }
 
 export function looksLikeNotebookLm(url = '') {

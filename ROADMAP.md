@@ -17,7 +17,7 @@
 - 최근 항목/자주 쓰는 폴더 UX 강화
 - 저장 시점 메타데이터 정교화
 
-상태: 진행 예정
+상태: 진행 중
 
 ## Phase 3: Retrieval Intelligence
 

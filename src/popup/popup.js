@@ -1,5 +1,5 @@
 import { bookshelfStorage } from '../utils/storage.js';
-import { looksLikeNotebookLm, parseTagsInput, stringifyTags, suggestTags } from '../utils/smart_tags.js';
+import { classifyDraft, looksLikeNotebookLm, parseTagsInput, stringifyTags, suggestTags } from '../utils/smart_tags.js';
 
 const titleInput = document.getElementById('titleInput');
 const urlInput = document.getElementById('urlInput');
@@ -204,11 +204,12 @@ async function saveCurrentItem() {
   }
 
   const smartTagging = (await bookshelfStorage.getSettings()).smartTagging;
-  const smartTagResults = smartTagging ? suggestTags(draft) : [];
+  const classified = smartTagging ? classifyDraft(draft) : { smartTags: [], folder: draft.folder || 'Inbox' };
 
   await bookshelfStorage.upsertItem({
     ...draft,
-    smartTags: smartTagResults,
+    folder: draft.folder || classified.folder,
+    smartTags: classified.smartTags,
     source: activeTabInfo?.url === draft.url ? 'current_tab' : 'manual'
   });
 

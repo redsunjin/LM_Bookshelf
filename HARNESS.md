@@ -34,6 +34,7 @@
 - 문서 하네스: `README.md`, `implementation_plan.md`, `task.md`, `ROADMAP.md`
 - 검증 하네스: `scripts/verify_project.mjs`, `TEST_MANUAL.md`
 - 코드 하네스: `src/manifest.json`, `src/utils/storage.js`, `src/utils/smart_tags.js`
+- 페이지 통합 하네스: `src/content/content.js`, `src/background/background.js`
 
 ## 최소 완료 기준
 
